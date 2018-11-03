@@ -8,35 +8,36 @@ var guessesLeft = 9;
 
 //Declaring Computer & User guesses
 var guessedLetters = [];
-var compGuesses = [];
+var computerGuesses = [];
+
 
 //Game Structure
-document.onload = function() {
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    compGuesses.push(computerGuess);
-    console.log(compGuesses[0]);
+window.onload = function() {
+    var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    computerGuesses.push(compGuess);
+    console.log(computerGuesses[0]);
 }
 
 document.onkeyup = function(event) {
     var userGuesses = event.key;
-    guessedLetters.push(compGuesses);
-    console.log(compGuesses[0]);
-}
+    guessedLetters.push(userGuesses);
+    console.log(computerGuesses[0]);
+
 
 //"if" statement
-if ((userGuesses === compGuesses[0]) && (guessesLeft > 0)) {
+if ((userGuesses === computerGuesses[0]) && (guessesLeft > 0)) {
     wins++;
     guessesLeft = 9;
     guessedLetters.length = 0;
-    compGuesses.length = 0;
-    var computerGuess = computerChoices[Math.floor(math.random() * computerChoices.length)];
-    compGuesses.push(computerGuess);
-    console.log(compGuesses[0]);
+    computerGuesses.length = 0;
+    var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    computerGuesses.push(compGuess);
+    console.log(computerGuesses[0]);
 }
 
 //"else if" statement
-else if ((userGuesses !== compGuesses[0]) && (guessesLeft > 0)) {
-    guessesLeft = guessedLetters-1;
+else if ((userGuesses !== computerGuesses[0]) && (guessesLeft > 0)) {
+    guessesLeft = guessedLeft-1; //error in original push
 }
 
 //"else" statement
@@ -44,9 +45,19 @@ else {
     losses++;
     guessesLeft = 9;
     guessedLetters.length = 0;
-    compGuesses.length = 0;
-    var computerGuess = computerChoices[Math.floor(math.random() * computerChoices.length)];
-    compGuesses.push(computerGuess);
-    console.log(compGuesses[0]);
+    computerGuesses.length = 0;
+    var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    computerGuesses.push(compGuess);
+    console.log(computerGuesses[0]);
 }
 
+//Adding a var HTML and Adding a document.querySelector()
+var html = "<p>Can you guess what letter or number that Im thinking of?</p>" +
+            "<p>Wins: " + wins + "</p>" +
+            "<p>Losses: " + losses + "</p>" +
+            "<p>Guesses Left: " + guessesLeft + "</p>" +
+            "<p>Guesses thus far: " + guessedLetters + "</p>";
+
+document.querySelector("#theGame").innerHTML = html;
+
+}

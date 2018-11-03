@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatable" content="ie=edge">
 
 <!--CSS & Javascript Links-->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 <!--Declaring title-->
   <title>Psychic Game</title>
@@ -16,9 +17,10 @@
 
 <body>
 
-  <!--Declaring the Header-->
-    <header>
+  <!--Declaring the Header ID for banner image-->
+    <header id=banner>
       <div class="container">
+        <img src="assets/images/banner.jpg" class="head-image" alt="crystalBall">
         <h1>The Psychic Game</h1>
       </div>
     </header>
@@ -26,16 +28,20 @@
     <!--creating a second container class and div id for the Game-->
     <div id="theGame" class="container-two">
       <!--creating a "p" class-->
-      <p class=>Can you guess what number that I'm thinking of?</p>
-      <p class=>Wins: </p>
-      <p class=>Losses: </p>
-      <p class=>Guesses thus far: </p>
+      <p>Can you guess what letter or number that I'm thinking of?</p>
+      <p>Wins: 0</p>
+      <p>Losses: 0</p>
+      <p>Guesses Left: 9</p> <!--forgot in original push-->
+      <p>Guesses thus far: </p>
     </div>
 
-    <!--Footer-->
+    <!--Footer w/ Container-->
     <footer>
+      <div class="container">
       Copyright &copy; 2018 Big Willie Style
+      </div>  
     </footer>
 
 
 </body>
+</html>

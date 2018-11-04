@@ -37,7 +37,7 @@ if ((userGuesses === computerGuesses[0]) && (guessesLeft > 0)) {
 
 //"else if" statement
 else if ((userGuesses !== computerGuesses[0]) && (guessesLeft > 0)) {
-    guessesLeft = guessedLeft-1; //error in original push
+    guessesLeft = guessesLeft-1; //error in original push
 }
 
 //"else" statement
@@ -49,10 +49,12 @@ else {
     var compGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     computerGuesses.push(compGuess);
     console.log(computerGuesses[0]);
+    console.log("Loss counter",losses)
 }
 
 //Adding a var HTML and Adding a document.querySelector()
-var html = "<p>Can you guess what letter or number that Im thinking of?</p>" +
+var html = "<h2>Can you guess what letter or number that Im thinking of?</h2>" +
+            "<hr />" +
             "<p>Wins: " + wins + "</p>" +
             "<p>Losses: " + losses + "</p>" +
             "<p>Guesses Left: " + guessesLeft + "</p>" +
